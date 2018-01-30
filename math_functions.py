@@ -66,3 +66,10 @@ def prime_sieve(n):
         if sieve[i//2]:
             sieve[i*i//2::i] = [False] * ((n-i*i-1)//(2*i)+1)
     return [2] + [2*i+1 for i in range(1,n//2) if sieve[i]]
+
+def gcd(a,b):
+    r = a % b
+    while r > 0:
+        print (a, b, r)
+        a, b, r = b, r, b%r
+    return b
